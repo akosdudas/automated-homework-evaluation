@@ -1,0 +1,61 @@
+site_name: Automated Homework Evaluation
+site_author: Dudás Ákos
+copyright: Copyright &copy; Dudás Ákos BME VIK AUT
+repo_name: akosdudas/automated-homework-evaluation
+repo_url: https://github.com/akosdudas/automated-homework-evaluation
+edit_uri: ""
+
+theme:
+  name: material
+  language: en
+  palette:
+    primary: indigo
+    accent: indigo
+  font:
+    text: Roboto
+    code: Roboto Mono
+  icon:
+    logo: octicons/book-24
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+
+extra_css:
+  - extra-style.css
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - toc:
+      permalink: true
+  - attr_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+plugins:
+  - search:
+      prebuild_index: true
+
+nav:
+  - index.md
+  - examples.md
+  - prerequisites.md
+  - "Automated evaluation":
+    - evaluate/index.md
+    - evaluate/evaluator-software.md
+    - evaluate/github-actions.md
+    - evaluate/ahk-cli.md
+  - "Using GitHub":
+    - using-github/index.md
+    - using-github/publishing-specification.md
+    - using-github/collecting-submissions.md
+    - using-github/providing-feedback.md
+  - "Further issues":
+    - others/branch-protection.md
+    - others/individual-work.md
+    - others/archival.md
