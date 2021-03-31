@@ -1,0 +1,864 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Dudás Ákos">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
+    
+    
+      
+        <title>Collecting submissions - Automated Homework Evaluation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.33e2939f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../extra-style.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#collecting-submissions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Automated Homework Evaluation" class="md-header__button md-logo" aria-label="Automated Homework Evaluation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M0 3.75A.75.75 0 0 1 .75 3h7.497c1.566 0 2.945.8 3.751 2.014A4.496 4.496 0 0 1 15.75 3h7.5a.75.75 0 0 1 .75.75v15.063a.75.75 0 0 1-.755.75l-7.682-.052a3 3 0 0 0-2.142.878l-.89.891a.75.75 0 0 1-1.061 0l-.902-.901a3 3 0 0 0-2.121-.879H.75a.75.75 0 0 1-.75-.75v-15zm11.247 3.747a3 3 0 0 0-3-2.997H1.5V18h6.947a4.5 4.5 0 0 1 2.803.98l-.003-11.483zm1.503 11.485V7.5a3 3 0 0 1 3-3h6.75v13.558l-6.927-.047a4.5 4.5 0 0 0-2.823.971z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Automated Homework Evaluation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Collecting submissions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/akosdudas/automated-homework-evaluation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    akosdudas/automated-homework-evaluation
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Automated Homework Evaluation" class="md-nav__button md-logo" aria-label="Automated Homework Evaluation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M0 3.75A.75.75 0 0 1 .75 3h7.497c1.566 0 2.945.8 3.751 2.014A4.496 4.496 0 0 1 15.75 3h7.5a.75.75 0 0 1 .75.75v15.063a.75.75 0 0 1-.755.75l-7.682-.052a3 3 0 0 0-2.142.878l-.89.891a.75.75 0 0 1-1.061 0l-.902-.901a3 3 0 0 0-2.121-.879H.75a.75.75 0 0 1-.75-.75v-15zm11.247 3.747a3 3 0 0 0-3-2.997H1.5V18h6.947a4.5 4.5 0 0 1 2.803.98l-.003-11.483zm1.503 11.485V7.5a3 3 0 0 1 3-3h6.75v13.558l-6.927-.047a4.5 4.5 0 0 0-2.823.971z"/></svg>
+
+    </a>
+    Automated Homework Evaluation
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/akosdudas/automated-homework-evaluation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    akosdudas/automated-homework-evaluation
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        What is Automated Homework Evaluation?
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/" class="md-nav__link">
+        Show me an example!
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prerequisites/" class="md-nav__link">
+        Prerequisite for automated evaluation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Automated evaluation
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Automated evaluation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Automated evaluation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evaluate/" class="md-nav__link">
+        Automated evaluation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evaluate/evaluator-software/" class="md-nav__link">
+        Evaluator software
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evaluate/github-actions/" class="md-nav__link">
+        GitHub Actions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evaluate/ahk-cli/" class="md-nav__link">
+        Ahk Cli
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      <label class="md-nav__link" for="__nav_5">
+        Using GitHub
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Using GitHub" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Using GitHub
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Using GitHub
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../publishing-specification/" class="md-nav__link">
+        Publising the assignment
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Collecting submissions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Collecting submissions
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#github-classroom" class="md-nav__link">
+    GitHub Classroom
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-github-classroom" class="md-nav__link">
+    Set up GitHub Classroom
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-all-this-help-you" class="md-nav__link">
+    How does all this help you?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#not-using-a-student-roster" class="md-nav__link">
+    Not using a student roster
+  </a>
+  
+    <nav class="md-nav" aria-label="Not using a student roster">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-adding-the-student-identifier-to-a-specified-text-file-in-the-repository" class="md-nav__link">
+    Option 1: Adding the student identifier to a specified text file in the repository
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-registering-repository-names-in-a-microsoft-form-or-google-forms" class="md-nav__link">
+    Option 2: Registering repository names in a Microsoft Form or Google Forms
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classroom-assistant" class="md-nav__link">
+    Classroom Assistant
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#downsides-of-using-github-classroom" class="md-nav__link">
+    Downsides of using GitHub Classroom
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../providing-feedback/" class="md-nav__link">
+        Provide feedback to students
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Further issues
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Further issues" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Further issues
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/branch-protection/" class="md-nav__link">
+        GitHub branch protection rules
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/individual-work/" class="md-nav__link">
+        Ensuring individual work
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/archival/" class="md-nav__link">
+        Archival of student work
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#github-classroom" class="md-nav__link">
+    GitHub Classroom
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-github-classroom" class="md-nav__link">
+    Set up GitHub Classroom
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-all-this-help-you" class="md-nav__link">
+    How does all this help you?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#not-using-a-student-roster" class="md-nav__link">
+    Not using a student roster
+  </a>
+  
+    <nav class="md-nav" aria-label="Not using a student roster">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-adding-the-student-identifier-to-a-specified-text-file-in-the-repository" class="md-nav__link">
+    Option 1: Adding the student identifier to a specified text file in the repository
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-registering-repository-names-in-a-microsoft-form-or-google-forms" class="md-nav__link">
+    Option 2: Registering repository names in a Microsoft Form or Google Forms
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classroom-assistant" class="md-nav__link">
+    Classroom Assistant
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#downsides-of-using-github-classroom" class="md-nav__link">
+    Downsides of using GitHub Classroom
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="collecting-submissions">Collecting submissions<a class="headerlink" href="#collecting-submissions" title="Permanent link">&para;</a></h1>
+<p>You need a place to collect the submitted assignments. Source code consists of multiple files; thus, it is usually zipped and uploaded somewhere (e.g., Moodle assignment) as a file.</p>
+<p>Working with zip files is inconvenient: it has to be downloaded, extracted, opened in a specific tool, like an IDE, the files opened inside the IDE, the entire source compiled, etc. All these steps are error-prone ("who was the student that this zip belongs to?"), manual and laborious (clicking a lot), and not very safe (opening files from not exactly trusted sources; just remember the <a href="https://snyk.io/research/zip-slip-vulnerability">zip slip vulnerability</a>.)</p>
+<h2 id="github-classroom">GitHub Classroom<a class="headerlink" href="#github-classroom" title="Permanent link">&para;</a></h2>
+<p><a href="https://classroom.github.com">GitHub Classroom</a> is a tool built into GitHub that automates collecting submissions. Suppose you want the students to submit the assignment in git repositories. You would need to</p>
+<ol>
+<li>create a repository for each student,</li>
+<li>add yourself and other teachers to the repository,</li>
+<li>add the student to the repository,</li>
+<li>import the starter code,</li>
+<li>and send the link to the student.</li>
+</ol>
+<p>This process is precisely what GitHub Classroom does. Once you have a <a href="../#github-organization">GitHub organization</a>, you can use the organization to "collect" all the git repositories from your students. <strong>The students will not own the repositories; the organization will own them</strong>, and the students are added to the repositories (only their repositories) as collaborators. Teachers and yourself will be able to access all of these repositories just by being part of the organization.</p>
+<h2 id="set-up-github-classroom">Set up GitHub Classroom<a class="headerlink" href="#set-up-github-classroom" title="Permanent link">&para;</a></h2>
+<p>Setting up GitHub Classroom consist of steps you need to perform once, and steps that you will need to repeat each semester.</p>
+<ol>
+<li>
+<p>Create the GitHub organization if you don't have one yet. See recommendations <a href="../#github-organization">here</a>.</p>
+</li>
+<li>
+<p>Add other teachers to this organization as members. These members will be able to access specified content within the organization.</p>
+<p><img :=":" alt="Organizazation members" class="img-center" src="../img/github-org-members.png" /></p>
+</li>
+<li>
+<p><a href="https://docs.github.com/en/github/setting-up-and-managing-organizations-and-teams/setting-base-permissions-for-an-organization">Configure the <em>base permission</em></a> inside the organization. This permission determines whether organization members (theses are the teachers and <em>not</em> the students) have access to the students' submissions.</p>
+<p><img :=":" alt="Organizazation base permission configuration" class="img-center" src="../img/github-org-base-permission.png" /></p>
+<p>Set the base permission to <strong>read</strong> so that every organization member (again, these are your teachers) can read all repositories to check student submissions.</p>
+<p>Or set the base permission to <strong>write</strong> to enable organization members to contribute to the students' repositories. Contribution means being able to add comments to the source code or merge pull requests.</p>
+</li>
+<li>
+<p>Sign up for <a href="https://education.github.com/teachers">GitHub Education</a> benefits. If you teach at an academic institution, this is free after verifying your status. This process (as of today) consists of two steps: verify your status and then upgrade your GitHub organization to have the benefits applied.</p>
+<p>GitHub Education is not necessarily required. GitHub (again, as of today) offers organizations and public repositories free of charge. But if you want private repositories, you need to pay for it - or request the discount. Private repositories are useful so that students do not see each other's work.</p>
+</li>
+<li>
+<p>Open <a href="https://classroom.github.com/">GitHub Classroom</a>, sign-in, and <a href="https://docs.github.com/en/education/manage-coursework-with-github-classroom/manage-classrooms#about-classrooms">create a new classroom</a>. A <em>classroom</em> can be, for example, your <em>Programming databases 2021 spring</em> course.</p>
+<div class="admonition tip">
+<p class="admonition-title">Classroom per course and per semester</p>
+<p>The <em>classroom</em> provides you with a level of organization. Create a new classroom each semester, and archive old classrooms.</p>
+</div>
+</li>
+<li>
+<p>When creating the <em>classroom</em>, you will be offered to <a href="https://docs.github.com/en/education/manage-coursework-with-github-classroom/manage-classrooms#about-classroom-rosters">create a <em>roster</em></a>. The problem the roster tries to solve is the mapping of students to repositories.</p>
+<div class="admonition danger">
+<p class="admonition-title">Careful with the roster</p>
+<p>Identifiers, like names or student ID numbers, are considered sensitive information and should not be published in the roster! In the European Union, the GDPR is quite strict about such matters. Therefore, you should make sure whether using a roster is possible for you.</p>
+<p>Check the <a href="#not-using-a-student-roster">alternative method</a> proposed below.</p>
+</div>
+</li>
+<li>
+<p>Inside the <em>classroom</em>, create as many <em>assignments</em> as you need. Create one for each homework.</p>
+<p>Each assignment has a name and a repository name prefix. The repository name prefix will be used when the student's repository is created. Make sure to provide a meaningful name; i.e., "homework" will not be enough.</p>
+<div class="admonition tip">
+<p class="admonition-title">Assignment names and repository prefixes</p>
+<p>A recommended assignment name, for example, is "Microsoft SQL Server programming" or "Homework 1 Java".</p>
+<p>The repository name prefix should include:</p>
+<ul>
+<li>a short prefix to separate these repositories from all others, e.g., "hw",</li>
+<li>the year or semester,</li>
+<li>and the short name of the assignment.</li>
+</ul>
+<p>This prefix will be postfixed with the student's GitHub account name, so it will look like this: <code>hw-2021-mssql-tinystar774</code>.</p>
+</div>
+<p>This is how one of my classrooms look like:</p>
+<p><img :=":" alt="Assignments in the classroom" class="img-center" src="../img/github-classroom-assignments.png" /></p>
+</li>
+<li>
+<p>The assignment will enable you to specify a <em>starter code template repository</em>. This repository will be used to populate the newly created repository for the student. This template repository is your <a href="../publishing-specification/#starter-code-in-a-repository">starter code</a>.</p>
+</li>
+<li>
+<p>Finally, note the assignment's <em>invitation URL</em>. This is the link you should communicate to your students.</p>
+<div class="admonition danger">
+<p class="admonition-title">The invitation URL should not be public</p>
+<p>This URL will enable <em>anyone</em> to create a repository in your organization. <strong>Do not publish it on a public website.</strong> I have seen a public invitation URL being abused, resulting in the entire GitHub organization being disabled.</p>
+</div>
+</li>
+</ol>
+<h2 id="how-does-all-this-help-you">How does all this help you?<a class="headerlink" href="#how-does-all-this-help-you" title="Permanent link">&para;</a></h2>
+<p>Students need only <strong>click the invitation</strong> link (see below), and their own personal repository will be created for them. There is no room for error here.</p>
+<p><img :=":" alt="Accepting a Classroom invite" class="img-center" src="../img/github-classroom-accept-assignment.png" /></p>
+<p>Members of the organization will have <strong>access to all submission repositories</strong>, while students only see their personal repository. You can control access by adding teachers to the organization as members.</p>
+<p>The <strong>starter code is automatically copied</strong> into the student's repository. Automating this step is also useful to avoid questions and problems, such as</p>
+<ul>
+<li>students not finding the download link to the starter code,</li>
+<li>corrupted downloads,</li>
+<li>not being able to extract a file due to not having A or B compression tool installed,</li>
+<li>messing up file names with special characters or spaces in the name,</li>
+<li>creating an extra unnecessary directory after extracting an archive,</li>
+<li>etc. (Add your favorite "how did this happen, really?" anecdote in here.)</li>
+</ul>
+<p>You <strong>do not need to download students' code</strong> or extract it. The source code is available inside a web browser and you can review it with ease. For more details, see <a href="../providing-feedback/#using-pull-requests">Using pull requests</a>.</p>
+<p><img :=":" alt="Reviewing and commenting a PR" class="img-center" src="../img/github-pr-review-comment.png" /></p>
+<h2 id="not-using-a-student-roster">Not using a student roster<a class="headerlink" href="#not-using-a-student-roster" title="Permanent link">&para;</a></h2>
+<p>Students get dedicated repositories in GitHub. The problem you will face is to map the repositories to students. The names of the repositories will contain the GitHub user names of students, but that will not be enough. The student roster of GitHub helps this by mapping the student's name to the repository, but it will not change the repository names. Thus it will still be complicated to find the repository for a student. Not to mention the previously noted privacy issues.</p>
+<p>Instead of the roster, I recommend two other approaches.</p>
+<h3 id="option-1-adding-the-student-identifier-to-a-specified-text-file-in-the-repository">Option 1: Adding the student identifier to a specified text file in the repository<a class="headerlink" href="#option-1-adding-the-student-identifier-to-a-specified-text-file-in-the-repository" title="Permanent link">&para;</a></h3>
+<p>Add a dedicated empty text file into the starter code repository into which the students must type their unique ID number. E.g., my university, BME, assigns a so-called <em>Neptun-code</em> to everyone. Thus, I add an empty <code>neptun.txt</code> into the <a href="https://github.com/akosdudas/ahk-sample-startercode/blob/master/neptun.txt">root of the starter code repository</a>, and the assignment instructions tell the students to type their code into this file.</p>
+<p>There are simple benefits to this solution. First, the mapping of the student with the repository exists inside the repository. If I see a repository, I can check whom it belongs to by checking the file contents. Second, GitHub has extensive search capabilities. I can find the repository of a student by executing a search within the organization, which will match the contents of these text files too. And finally, automation can check the existence of this text file and its content.</p>
+<p>GitHub has a continuous integration system, called <a href="https://github.com/features/actions">GitHub Actions</a>, enabling us to execute scripts on the student repositories automatically. For example, you can check the text file upon each commit and report an error to the student when there is a problem. An example for such action is available here: <a href="https://github.com/akosdudas/ahk-action-neptuncheck">https://github.com/akosdudas/ahk-action-neptuncheck</a>. This is a GitHub Action specification, which can be <a href="https://github.com/akosdudas/ahk-sample-studentsolution/blob/master/.github/workflows/evaluate.yml#L18">included in a workflow</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Customized checking</p>
+<p>This action requires a specific file name and content. Feel free to reuse it or fork it and create your own!</p>
+</div>
+<h3 id="option-2-registering-repository-names-in-a-microsoft-form-or-google-forms">Option 2: Registering repository names in a Microsoft Form or Google Forms<a class="headerlink" href="#option-2-registering-repository-names-in-a-microsoft-form-or-google-forms" title="Permanent link">&para;</a></h3>
+<p>You can publish a registration form using <a href="https://forms.office.com/">Microsoft Forms</a> or <a href="https://www.google.com/forms/about/">Google Forms</a> and ask your students to add their repository URL along with their student ID number. This solution is simple but error-prone if students forget this. Plus, you will not have the search capability as in the previous option.</p>
+<h2 id="classroom-assistant">Classroom Assistant<a class="headerlink" href="#classroom-assistant" title="Permanent link">&para;</a></h2>
+<p>Once you have the student repositories "in the cloud," i.e., in GitHub, how do you work with them? One option is <a href="../providing-feedback/#using-pull-requests">using pull requests</a>, and the other one is to download them to your machine. I download the repositories for archival purposes at the end of the semester.</p>
+<p>How do you download hundreds of repositories? <a href="https://classroom.github.com/assistant">GitHub Classroom Assistant</a> is a handy tool that enables mass download of all repositories of a Classroom assignment. I have been using this tool to download up to 250 repositories per assignment.</p>
+<p>Another way for mass download is scripting with the help of <a href="https://github.com/microsoft/PowerShellForGitHub">PowerShellForGitHub PowerShell Module</a>. Since all repositories created by Classroom have an identical prefix, you can search for these repositories and clone them all in a script.</p>
+<h2 id="downsides-of-using-github-classroom">Downsides of using GitHub Classroom<a class="headerlink" href="#downsides-of-using-github-classroom" title="Permanent link">&para;</a></h2>
+<p>GitHub and GitHub Classroom is not a universal solution for all. There are drawbacks and downsides of the techniques presented here. Without going into further details, here is a short list for consideration.</p>
+<ul>
+<li>Requires a GitHub account. It is free, though, but still asks the student to use a third-party service.</li>
+<li>Working with git is not always easy. The trivial tasks are simple, but once we get to branching, it tends to get complicated for students who don't have much practice with it. I recommend using good git clients, like <a href="https://desktop.github.com/">GitHub Desktop</a>, and promoting these to students too.</li>
+<li>There are occasional downtimes at GitHub. Like all cloud services, there are unexpected errors from time to time. In the past years, I have seen students experience intermittent errors dozens of times. It even prohibited us from completing a class once. You need a communication platform (Microsoft Teams, Slack channel, email list, etc.) to let students know when something is not working. Not all of them are experienced enough to recognize a real problem and to know when just a retry is needed.</li>
+<li>GitHub has its own terminology, like branches and pull requests. But we need assignments and submissions. You have to accept the fact that there is a misalignment here.</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../publishing-specification/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Publising the assignment
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../providing-feedback/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Provide feedback to students
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; Dudás Ákos BME VIK AUT
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.sections", "navigation.indexes", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d892486b.min.js"></script>
+      
+    
+  </body>
+</html>

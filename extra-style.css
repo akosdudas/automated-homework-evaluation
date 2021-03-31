@@ -1,0 +1,17 @@
+.img-center {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Unordered list <ul> symbols:
+ * - level 2 is hollow circle
+ * - level 3 is filled square
+ * - ul default is filled disc (bullet)
+ */
+ article ul ul {
+    list-style-type:  circle !important;
+}
+
+article ul ul ul {
+    list-style-type:  square !important;
+}
