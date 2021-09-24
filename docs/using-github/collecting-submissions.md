@@ -24,11 +24,11 @@ Setting up GitHub Classroom consist of steps you need to perform once, and steps
 
 1. Add other teachers to this organization as members. These members will be able to access specified content within the organization.
 
-    ![Organizazation members](img/github-org-members.png){ : .img-center }
+    ![Organization members](img/github-org-members.png){ : .img-center }
 
 1. [Configure the _base permission_](https://docs.github.com/en/github/setting-up-and-managing-organizations-and-teams/setting-base-permissions-for-an-organization) inside the organization. This permission determines whether organization members (theses are the teachers and _not_ the students) have access to the students' submissions.
 
-    ![Organizazation base permission configuration](img/github-org-base-permission.png){ : .img-center }
+    ![Organization base permission configuration](img/github-org-base-permission.png){ : .img-center }
 
     Set the base permission to **read** so that every organization member (again, these are your teachers) can read all repositories to check student submissions.
 

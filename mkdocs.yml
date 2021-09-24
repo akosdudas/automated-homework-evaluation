@@ -46,16 +46,16 @@ nav:
   - examples.md
   - prerequisites.md
   - "Automated evaluation":
-    - evaluate/index.md
-    - evaluate/evaluator-software.md
-    - evaluate/github-actions.md
-    - evaluate/ahk-cli.md
+      - evaluate/index.md
+      - evaluate/evaluator-software.md
+      - evaluate/github-actions.md
+      - evaluate/ahk-cli.md
   - "Using GitHub":
-    - using-github/index.md
-    - using-github/publishing-specification.md
-    - using-github/collecting-submissions.md
-    - using-github/providing-feedback.md
+      - using-github/index.md
+      - using-github/publishing-specification.md
+      - using-github/collecting-submissions.md
+      - using-github/providing-feedback.md
+      - using-github/further-automation.md
   - "Further issues":
-    - others/branch-protection.md
-    - others/individual-work.md
-    - others/archival.md
+      - others/individual-work.md
+      - others/archival.md

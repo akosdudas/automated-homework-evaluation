@@ -57,11 +57,11 @@ jobs:
         uses: docker://ghcr.io/akosdudas/ahk-sample:evaluator-v1
 
       - name: Publish results
-        uses: akosdudas/ahk-action-publish-result-pr@v1
+        uses: docker://ghcr.io/akosdudas/ahk-publish-results-pr:v1
         with:
-          input-file: "result.txt"
-          image-extension: ".png"
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          AHK_IMAGEEXT: ".png"
+          AHK_RESULTFILE: "result.txt"
 ```
 
 This workflow definition works on [_pull requests_](../using-github/providing-feedback.md#using-pull-requests); this is what you see on lines 4-5. If the student sets the pull request as [_draft_](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests#draft-pull-requests), the evaluation is skipped (line 13), allowing the student to make changes to the code without running the assessment.
@@ -76,7 +76,7 @@ The next step is building the source code to get the executable versions (lines 
 
 And now comes the actual assessment. Since the evaluator application is containerized, the workflow only needs to trigger the execution of this container. The working directory with the source code and the built binaries are mounted into the container, so the application can access it.
 
-The final step is publishing the results of the assessment (line 35). The evaluator application writes the results to a text file, and the [custom action](https://github.com/akosdudas/ahk-action-publish-result-pr) reads this text file to send the contents into the pull request thread ([see example here](https://github.com/akosdudas/ahk-sample-studentsolution/pull/1#issuecomment-646669774)).
+The final step is publishing the results of the assessment (line 35). The evaluator application writes the results to a text file, and the [custom containerized application](https://github.com/akosdudas/ahk-github-automation/tree/master/publish-results-pr) reads this text file to send the contents into the pull request thread ([see example here](https://github.com/akosdudas/ahk-sample-studentsolution/pull/1#issuecomment-646669774)). (This custom step also allows us to save the outcome of the automated evaluation to a database, which reduces the manual labor on the part of the instructors; see [here](../using-github/further-automation.md) for further details.)
 
 ### Example 2
 
