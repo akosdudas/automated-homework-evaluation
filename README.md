@@ -18,12 +18,12 @@ Pre-requisites: Docker, Visual Studio Code, [Remote Development extension](https
 Pre-requisites: Docker
 
 1. Open a Powershell console to the repository root
-1. `docker run -it --rm -p 8000:8000 -v ${PWD}:/docs squidfunk/mkdocs-material:7.1.0`
+1. `docker run -it --rm -p 8000:8000 -v ${PWD}:/docs squidfunk/mkdocs-material:7.3.0`
 1. Open <http://localhost:8000> in a browser to view the live content.
 
 ### Using Python and pip
 
 Pre-requisites: Python 3
 
-1. Install package using `pip install mkdocs-material==7.1.0`
+1. Install package using `pip install mkdocs-material==7.3.0`
 1. Start `mkdocs serve` in the repository root
