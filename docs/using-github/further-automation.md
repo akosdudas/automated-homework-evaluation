@@ -6,7 +6,7 @@ Using GitHub as a platform allows us to add further automation into the homework
 
 [Ahk GitHub Automation](https://github.com/akosdudas/ahk-github-monitor) is a set of tools, open-source, of course, that enable such automation. It consists of:
 
-- _GitHub Monitor_: An Azure function written in .NET Core with a http webhook registered as a GitHub Application that manages the workflow of homework submissions. Performs automatic actions on repositories acting as submissions and monitors proper usage of pull reqeusts.
+- _GitHub Monitor_: An Azure function written in .NET Core with a http webhook registered as a GitHub Application that manages the workflow of homework submissions. Performs automatic actions on repositories acting as submissions and monitors proper usage of pull requests.
 - _Publish Results to PR_: A containerized Go application that processes the output of evaluator applications and publishes the results to the student into a pull request, as well as forwarding it to the grade management application.
 - _Grade Management_: An Azure function written in .NET Core that accepts grades from the other applications and stores them in Azure CosmosDB database. Helps teachers by reducing the administration of submissions and grades.
 
@@ -30,7 +30,7 @@ The pull request-based process relies on publishing the outcome of the automated
 
 ## Accepting a submission and finalizing the grade
 
-Once a student submits a homework, the instructor needs to check it and grade it. To reduce the manual work required from the instructor the automatically assigned grades can be recorded automatically in a database. Furthermore, using a "chatops-like" command automation can finalize the students submission as follows. By entering the `/ahk ok 1.5 2` command:
+Once a student submits a homework, the instructor needs to check it and grade it. To reduce the manual work required from the instructor the automatically assigned grades can be recorded in a database. Furthermore, using a "chatops-like" command automation can finalize the students submission as follows. By entering the `/ahk ok 1.5 2` command:
 
 1. The pull request is approved (signalling both acceptance to the student and allowing merging);
 1. The pull request is merged (while this is not really necessary, it is in accordance with software development best prectises);
