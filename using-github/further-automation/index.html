@@ -665,7 +665,7 @@
 <h2 id="ahk-github-automation"><a href="https://github.com/akosdudas/ahk-github-automation">Ahk GitHub Automation</a><a class="headerlink" href="#ahk-github-automation" title="Permanent link">&para;</a></h2>
 <p><a href="https://github.com/akosdudas/ahk-github-monitor">Ahk GitHub Automation</a> is a set of tools, open-source, of course, that enable such automation. It consists of:</p>
 <ul>
-<li><em>GitHub Monitor</em>: An Azure function written in .NET Core with a http webhook registered as a GitHub Application that manages the workflow of homework submissions. Performs automatic actions on repositories acting as submissions and monitors proper usage of pull reqeusts.</li>
+<li><em>GitHub Monitor</em>: An Azure function written in .NET Core with a http webhook registered as a GitHub Application that manages the workflow of homework submissions. Performs automatic actions on repositories acting as submissions and monitors proper usage of pull requests.</li>
 <li><em>Publish Results to PR</em>: A containerized Go application that processes the output of evaluator applications and publishes the results to the student into a pull request, as well as forwarding it to the grade management application.</li>
 <li><em>Grade Management</em>: An Azure function written in .NET Core that accepts grades from the other applications and stores them in Azure CosmosDB database. Helps teachers by reducing the administration of submissions and grades.</li>
 </ul>
@@ -679,7 +679,7 @@
 <h2 id="recognizing-when-a-comment-is-changed">Recognizing when a comment is changed<a class="headerlink" href="#recognizing-when-a-comment-is-changed" title="Permanent link">&para;</a></h2>
 <p>The pull request-based process relies on publishing the outcome of the automated evaluation as a comment into the pull request thread. The students have write permission to the repository enabling them to edit comments. So technically, a student could edit the comment added by the automation tool and change the contents. Although the comment would appear as <em>edited</em>, it might not be recognized by the teacher. The solution is to subscribe to the event of comment editing and verifying that students do not touch comments other than their own - or publish a warning when this happens.</p>
 <h2 id="accepting-a-submission-and-finalizing-the-grade">Accepting a submission and finalizing the grade<a class="headerlink" href="#accepting-a-submission-and-finalizing-the-grade" title="Permanent link">&para;</a></h2>
-<p>Once a student submits a homework, the instructor needs to check it and grade it. To reduce the manual work required from the instructor the automatically assigned grades can be recorded automatically in a database. Furthermore, using a "chatops-like" command automation can finalize the students submission as follows. By entering the <code>/ahk ok 1.5 2</code> command:</p>
+<p>Once a student submits a homework, the instructor needs to check it and grade it. To reduce the manual work required from the instructor the automatically assigned grades can be recorded in a database. Furthermore, using a "chatops-like" command automation can finalize the students submission as follows. By entering the <code>/ahk ok 1.5 2</code> command:</p>
 <ol>
 <li>The pull request is approved (signalling both acceptance to the student and allowing merging);</li>
 <li>The pull request is merged (while this is not really necessary, it is in accordance with software development best prectises);</li>
